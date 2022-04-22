@@ -29,9 +29,9 @@ the entire seqID will be grafted into the `nodes.dmp` and `names.dmp` files so m
 =================================================
 
 **the script then generates three output files:**
-* `new_nodes.dmp` (or specified name) of the modified nodes.dmp
-* `new_names.dmp` (or specified name) of the modified names.dmp
-* `K2.fasta` (or specified name) of the modified .fasta file
+* `new_nodes.dmp` (or specified name) of the modified `nodes.dmp`
+* `new_names.dmp` (or specified name) of the modified `names.dmp`
+* `K2.fasta` (or specified name) of the modified `.fasta` file
 
 =================================================
 
