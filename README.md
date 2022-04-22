@@ -1,5 +1,5 @@
 # KrakenGrafter
-a simple python script for "grafting" on novel sequences to a custom Kraken2 database
+a simple python3 script for "grafting" on novel sequences to a custom Kraken2 database
 
 the purpose of this script is to append on the contents of a .fasta file to the nodes.dmp and names.dmp used by Kraken2 - in effect "grafting" on a new branch to the tree of life inside the nodes.dmp and names.dmp files. this allows the user to then use the "kraken2-build --add-to-library" functionality during database building thereby making sure their own custom sequences are included
 
