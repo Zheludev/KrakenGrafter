@@ -8,8 +8,8 @@ this is an extension to simply using `kraken2-build --add-to-library` because it
 =================================================
 
 two example usecases: 
-- say you've identified a new set of members of a genus and want to count their prevalance in sequencing datasets - they are hitherto unknown to the NCBI, and so wont have their own nodes in the taxonomy - you'd use the "1)" approach here
-- say you've indetified a completely new set of sequences - not only does the NCBI doesn't have a node, but maybe they don't even fit the tree of life! - you could append these sequences to "synthetic construct" under a new genus-species pair - you'd use the "2)" approach here
+- say you've identified a new set of members of a genus and want to count their prevalance in sequencing datasets - they are hitherto unknown to the NCBI, and so wont have their own nodes in the taxonomy - you'd use the ["1." approach here](https://github.com/Zheludev/KrakenGrafter/edit/main/README.md#1-a-given-fasta-files-sequences-isare-inserted-directly-beneath-taxonomically-speaking-a-specified-root-node)
+- say you've indetified a completely new set of sequences - not only does the NCBI doesn't have a node, but maybe they don't even fit the tree of life! - you could append these sequences to "synthetic construct" under a new genus-species pair - you'd use the ["2." approach here](https://github.com/Zheludev/KrakenGrafter/edit/main/README.md#2-the-user-declares-a-brand-new-parent-node-that-is-inserted-beneath-the-root-node-at-a-user-specified-taxonomic-depth-and-then-the-given-fasta-sequences-isare-inserted-directly-beneath-this-new-parent-node-this-functionality-is-enabled-by-declaring-both--parent_taxon-and--parent_rank)
 
 =================================================
 
@@ -38,19 +38,27 @@ the entire seqID will be grafted into the `nodes.dmp` and `names.dmp` files so m
 =================================================
 
 the script can be used in two different ways - in both cases, brand new taxon IDs are generated that have not been seen in the `nodes.dmp` and `names.dmp` files:
-1) a given `.fasta` file's sequence(s) is/are inserted directly beneath (taxonomically speaking) a specified "root" node
+#### 1) a given `.fasta` file's sequence(s) is/are inserted directly beneath (taxonomically speaking) a specified "root" node
 
   example:
 
   `python KrakenGrafter.py -i_nodes nodes.dmp -i_names names.dmp -i_fasta input.fasta -root 32630`
 
-2) the user declares a brand new "parent" node that is inserted beneath the "root" node (at a user-specified taxonomic depth) and then the given `.fasta` sequence(s) is/are inserted directly beneath this new "parent" node this functionality is enabled by declaring both `-parent_taxon` and `-parent_rank`
+=================================================
+
+#### 2) the user declares a brand new "parent" node that is inserted beneath the "root" node (at a user-specified taxonomic depth) and then the given `.fasta` sequence(s) is/are inserted directly beneath this new "parent" node this functionality is enabled by declaring both `-parent_taxon` and `-parent_rank`
 
   example:
 
   `python KrakenGrafter.py -i_nodes nodes.dmp -i_names names.dmp -i_fasta input.fasta -root 32630 -parent_taxon new_genus -parent_rank genus`
 
-NOTE: `i_nodes`, `i_names`, `root`, `o_nodes`, `o_names`, `o_fasta`, and `debug` are all optional variables to declare the default "root" node is 32630 - which is the NCBI's "synthetic construct" node - a safe habour for new sequences otherwise, one can either go on the NCBI taxonomy browser or use `grep 'taxon_string' names.dmp` to try and work out what taxon ID to use for "root"
+=================================================
+
+NOTE: `i_nodes`, `i_names`, `root`, `o_nodes`, `o_names`, `o_fasta`, and `debug` are all optional variables to declare.
+
+the default "root" node is 32630 - which is the NCBI's "synthetic construct" node - a safe habour for new sequences.
+
+To find a more specific node, one can either go on the [NCBI taxonomy browser](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi) or use `grep 'taxon_string' names.dmp` to try and work out what taxon ID to use for "root"
 
 =================================================
 
