@@ -3,7 +3,7 @@ a simple python3 script for "grafting" on novel sequences to a custom [Kraken2](
 
 the purpose of this script is to append on the contents of a `.fasta` file to the `nodes.dmp` and `names.dmp` used by [Kraken2](https://github.com/DerrickWood/kraken2) - in effect "grafting" on a new branch to the tree of life inside the `nodes.dmp` and `names.dmp` files. this allows the user to then use the `kraken2-build --add-to-library` functionality during database building thereby making sure their own custom sequences are included
 
-this is an extension to simply using `kraken2-build --add-to-library` because it allows the user to create new nodes that did not previously exist in the taxonomic system.
+this is an extension to simply using `kraken2-build --add-to-library` because it allows the user to create new nodes that did not previously exist in the taxonomic system - see [kraken2's custom database section](https://github.com/DerrickWood/kraken2/blob/master/docs/MANUAL.markdown#custom-databases).
 
 an example usecase is: 
 - say you've identified a new set of members of a genus and want to count their prevalance in sequencing datasets - they are hitherto unknown to the NCBI, and so wont have their own nodes in the taxonomy - you'd use the "1)" approach here
