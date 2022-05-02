@@ -120,11 +120,11 @@ regardless of how you use `KrakenGrafter.py`, you need to start the same way by 
 
 ### B) grafting on new sets of sequences to new nodes
 
-   let's say I want to graft on `species3.fasta` to a new node under a given `family_taxID` in a new genus (named `new_genus`) - in addition to the setup above, you will also need to decide on a name for the new parent taxon (e.g. `new_genus`). The 'root' under which this parent taxon is inserted can be any taxonomic depth above the parent taxon (e.g. you could instert a new bacterial species in simply the bacterial kingtom taxID as the 'root' - 2 - but then create a brand new genus - `new_genus`). Because the new parent taxon (in this case `new_genus`) doesn't yet exist in the taxomony, a new taxID will be automatically generated for it as well as for the actual sequences being added below it:
+   let's say I want to graft on `species3.fasta` to a new node under a given `family_taxID` in a new genus (named `new_genus`) - in addition to the setup above, you will also need to decide on a name for the new parent taxon (e.g. `new_genus`) as well as a taxonomic rank for this taxon (in this case `genus`). The 'root' under which this parent taxon is inserted can be any taxonomic depth above the parent taxon (e.g. you could instert a new bacterial species in simply the bacterial kingtom taxID as the 'root' - 2 - but then create a brand new genus - `new_genus`). Because the new parent taxon (in this case `new_genus`) doesn't yet exist in the taxomony, a new taxID will be automatically generated for it as well as for the actual sequences being added below it:
  
    1) `python KrakenGrafter.py -i_nodes nodes.dmp -i_names names.dmp -i_fasta species3.fasta -root family_taxID -parent_taxon new_genus -parent_rank genus -o_nodes nodes.dmp -o_names names.dmp -o_fasta K2_species3.fasta`
 
-   2) **now make sure to move the edited `nodes.dmp` and `names.dmp` files back to `$DB_name/taxonomy`**
+   2) **now make sure to move the edited `nodes.dmp` and `names.dmp` files (with those exact names) back to `$DB_name/taxonomy`**
    
    3) now we need to use the [in-built features of Kraken2](https://github.com/DerrickWood/kraken2/blob/master/docs/MANUAL.markdown#custom-databases) to actually add these sequences to the database and build the database:
       
