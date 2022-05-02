@@ -128,9 +128,9 @@ regardless of how you use `KrakenGrafter.py`, you need to start the same way by 
    
    3) now we need to use the [in-built features of Kraken2](https://github.com/DerrickWood/kraken2/blob/master/docs/MANUAL.markdown#custom-databases) to actually add these sequences to the database and build the database:
       
-    `kraken2-build --add-to-library K2_species3.fasta --db $DB_name`
+   `kraken2-build --add-to-library K2_species3.fasta --db $DB_name`
    
-    `kraken2-build --build --db $DB_name --threads 32`
+   `kraken2-build --build --db $DB_name --threads 32`
 
 =================================================
 
