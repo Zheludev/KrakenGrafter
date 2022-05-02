@@ -92,7 +92,7 @@ regardless of how you use `KrakenGrafter.py`, you need to start the same way by 
 
 4. lastly in the prep, you need to have ready a `.fasta` file. The file can contain any number of sequences, the only thing to look out for are the seqIDs (the ">" names of the sequences) - **your `.fasta` file seqIDs need to have no whitespaces (space / tab) and no pipe characters ("|")**
 
-    **your `.fasta` file must contain sequences that will all be insterted under the same taxonomic node** - e.g. if you want to graft on both say a new bacterium and a new protist, you would run `KrakenGrafter.py` twice, once for the bacterium and once for the protist (any order) - _but the input `nodes.dmp` and `names.dmp` files of the second 'round' of `KrakenGrafter.py` will be the output from the first_
+    **your `.fasta` file must contain sequences that will all be insterted under the same taxonomic node** - e.g. if you want to graft on both say a new bacterium and a new protist, you would run `KrakenGrafter.py` twice, once for the bacterium and once for the protist (any order) - each with their own `.fasta` file - _but the input `nodes.dmp` and `names.dmp` files of the second 'round' of `KrakenGrafter.py` will be the output from the first_
 
 5. I'd now take your copies of the `nodes.dmp` and `names.dmp` files and your `.fasta` file(s) and put them in the same directory (this isn't necessary but I find it easier than writing out long paths)
 
