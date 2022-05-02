@@ -10,6 +10,7 @@ this is an extension to simply using `kraken2-build --add-to-library` because it
 two example usecases: 
 - say you've identified a new set of members of a genus and want to count their prevalance in sequencing datasets - they are hitherto unknown to the NCBI, and so wont have their own nodes in the taxonomy - you'd use the ["A)" approach here](https://github.com/Zheludev/KrakenGrafter/edit/main/README.md#1-a-given-fasta-files-sequences-isare-inserted-directly-beneath-taxonomically-speaking-a-specified-root-node)
 - say you've indetified a completely new set of sequences - not only does the NCBI doesn't have a node, but maybe they don't even fit the tree of life! - you could append these sequences to "synthetic construct" under a new genus-species pair - you'd use the ["B)" approach here](https://github.com/Zheludev/KrakenGrafter/edit/main/README.md#2-the-user-declares-a-brand-new-parent-node-that-is-inserted-beneath-the-root-node-at-a-user-specified-taxonomic-depth-and-then-the-given-fasta-sequences-isare-inserted-directly-beneath-this-new-parent-node-this-functionality-is-enabled-by-declaring-both--parent_taxon-and--parent_rank)
+- more detail [in the tutorial](https://github.com/Zheludev/KrakenGrafter/edit/main/README.md#tutorial)
 
 =================================================
 
